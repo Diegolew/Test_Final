@@ -56,5 +56,17 @@ void DelEvent(string date, string event){
 }
 
 void DelDate(string date){
-
+    db.erase(date);
 }
+
+void Find(string date){
+    if(db.count(date) == 0){
+        cout << "Not found" << endl;
+    }
+    else{
+        for(int i = 0; i < db[date].size(); i++){
+            cout << db[date][i] << endl;
+        }
+    }
+}
+
