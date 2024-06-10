@@ -15,6 +15,10 @@ map<string, vector<string>> db;
 
 int main(){
 
+cout<<"Bienvendido a la base de datos"<<endl;
+cout<<"Comandos disponibles: Add, Del, Find, Print"<<endl;
+cout<<"ingrese un comando: "<<endl;
+
 string command, date, description;
 while (getline(cin , command)) {
         if (command == "Add") {
@@ -51,3 +55,6 @@ void DelEvent(string date, string event){
     }
 }
 
+void DelDate(string date){
+
+}
