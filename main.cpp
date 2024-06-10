@@ -21,19 +21,19 @@ cout<<"ingrese un comando: "<<endl;
 
 string command, date, description;
 while (getline(cin , command)) {
-        if (command == "Add") {
+        if (command == ("Add")||("add")) {
         cin >> date >> description;
         Add(date, description);
-    } else if (command == "Del") {
+    } else if (command == ("Del")||("del")) {
         cin >> date >> description;
         if (description.empty())
             DelDate(date);
         else
            DelEvent(date, description);
-    } else if (command == "Find") {
+    } else if (command == ("Find")||("find")) {
         cin >> date;
         Find(date);
-       } else if (command == "Print") {
+       } else if (command == ("Print")||("print")) {
        Print();
     } else {
         cout << "Unknown command: " << command << endl;
@@ -71,9 +71,21 @@ void Find(string date){
 }
 
 void Print(){
-    for(auto i : db){
-        for(int j = 0; j < i.second.size(); j++){
-            cout << i.first << " " << i.second[j] << endl;
-     }
+    for(auto& date_events : db){
+        string date = date_events.first;
+        vector<string>& events = date_events.second;
+        
+        int n = events.size();
+        for (int i = 0; i < n - 1; ++i) {
+            for (int j = i + 1; j < n; ++j) {
+                if (events[i] > events[j]) {
+                    swap(events[i], events[j]);
+                }
+            }
+        }
+        
+        for(const auto& event : events){
+            cout << date << " " << event << endl;
+        }
     }
 }
