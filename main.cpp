@@ -70,3 +70,10 @@ void Find(string date){
     }
 }
 
+void Print(){
+    for(auto i : db){
+        for(int j = 0; j < i.second.size(); j++){
+            cout << i.first << " " << i.second[j] << endl;
+     }
+    }
+}
