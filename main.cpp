@@ -42,3 +42,12 @@ return 0;
 void Add(string date, string event){
     db[date].push_back(event);   
 }
+
+void DelEvent(string date, string event){
+    for(int i = 0; i < db[date].size(); i++){
+        if(db[date][i] == event){
+            db[date].erase(db[date].begin() + i);
+        }
+    }
+}
+
