@@ -14,8 +14,28 @@ void Print();
 map<string, vector<string>> db;
 
 int main(){
-string command, date, description;
 
+string command, date, description;
+while (getline(cin , command)) {
+        if (command == "Add") {
+        cin >> date >> description;
+        Add(date, description);
+    } else if (command == "Del") {
+        cin >> date >> description;
+        if (description.empty())
+            DelDate(date);
+        else
+           DelEvent(date, description);
+    } else if (command == "Find") {
+        cin >> date;
+        Find(date);
+       } else if (command == "Print") {
+       Print();
+    } else {
+        cout << "Unknown command: " << command << endl;
+        return 1; 
+    }
+}
 return 0;
 }
 
