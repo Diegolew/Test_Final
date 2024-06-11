@@ -59,19 +59,17 @@ while (getline(cin, line)) {
     return 0;
 }
 
-void Add(string date, string event){
-    database[date].push_back(event);   
+void Add(string date, string event) {
+    database[date].push_back(event);
 }
 
-void DelEvent(string date, string event){
-    for(int i = 0; i < database[date].size(); i++){
-        if(database[date][i] == event){
-            database[date].erase(database[date].begin() + i);
-        }
-    }
+void DelEvent(string date, string event) {
+    auto& events = database[date];
+    events.erase(remove(events.begin(), events.end(), event), events.end());
 }
 
-void DelDate(string date){
+
+void DelDate(string date) {
     database.erase(date);
 }
 
