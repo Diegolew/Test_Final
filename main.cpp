@@ -5,12 +5,13 @@
 
 using namespace std;
 
-void Add(string date, string event);
-void DelEvent(string date, string event);
-void DelDate(string date);
-void Find(string date);
+//DECLARACION DE FUNCIONES
+void Add(string dato, string evento);
+void DeleteEvent(string dato, string evento);
+void DeleteDate(string dato);
+void Find(string dato);
 void Print();
- 
+//DECLARACION DE LA BASE DE DATOS
 map<string, vector<string>> database;
 
 int main() {
@@ -32,19 +33,19 @@ while (getline(cin, line)) {
     if (command == "Add") {
         size_t pos = line.find(' ');
         if (pos != string::npos) {
-            string date = line.substr(0, pos);
-            string event = line.substr(pos + 1);
-            Add(date, event);
+            string dato = line.substr(0, pos);
+            string evento = line.substr(pos + 1);
+            Add(dato, evento);
         }
     } else if (command == "Del") {
         size_t pos = line.find(' ');
         if (pos != string::npos) {
-            string date = line.substr(0, pos);
-            string event = line.substr(pos + 1);
-            if (event.empty()) {
-                DelDate(date);
+            string dato = line.substr(0, pos);
+            string evento = line.substr(pos + 1);
+            if (evento.empty()) {
+                DeleteDate(dato);
             } else {
-                DelEvent(date, event);
+                DeleteEvent(dato, evento);
             }
         }
     } else if (command == "Find") {
@@ -58,39 +59,39 @@ while (getline(cin, line)) {
     }
     return 0;
 }
-
-void Add(string date, string event) {
-    database[date].push_back(event);
+//FUNCION ADD
+void Add(string dato, string evento) {
+    database[dato].push_back(evento);
 }
-
-void DelEvent(string date, string event) {
-    auto& events = database[date];
-    events.erase(remove(events.begin(), events.end(), event), events.end());
+//FUNCION DELETE
+void DeleteEvent(string dato, string evento) {
+    auto& eventos = database[dato];
+    eventos.erase(remove(eventos.begin(), eventos.end(), evento), eventos.end());
 }
-
-void DelDate(string date) {
-    database.erase(date);
+//FUNCION DELETE DATE
+void DeleteDate(string dato) {
+    database.erase(dato);
 }
-
-void Find(string date) {
-    if (database.count(date) == 0) {
+//FUNCION FIND
+void Find(string dato) {
+    if (database.count(dato) == 0) {
         cout << "Not found" << endl;
     } else {
-        for (const auto& event : database[date]) {
-            cout << event << endl;
+        for (const auto& evento : database[dato]) {
+            cout << evento << endl;
         }
     }
 }
-
+//FUNCION PRINT
 void Print() {
-    for (auto& date_events : database) {
-        string date = date_events.first;
-        vector<string>& events = date_events.second;
+    for (auto& dato_eventos : database) {
+        string dato = dato_eventos.first;
+        vector<string>& eventos = dato_eventos.second;
 
-        sort(events.begin(), events.end());
+        sort(eventos.begin(), eventos.end());
 
-        for (const auto& event : events) {
-            cout << date << " " << event << endl;
+        for (const auto& event : eventos) {
+            cout << dato << " " << event << endl;
         }
     }
 }
