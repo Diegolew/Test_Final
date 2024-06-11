@@ -1,35 +1,65 @@
 <h1 align="center">Diego Lewensztain Zelaya</h1>
 
-PROBLEMATICA
+## PROBLEMATICA
 
 El fracaso financiero, la ineficiencia y la mala gestión representan serias amenazas para cualquier empresa. Uno de los principales culpables de estos problemas es la deficiente administración de la información. La gestión inadecuada de los datos no solo ralentiza el rendimiento laboral, sino que también conlleva impactos negativos tanto a corto como a largo plazo. Por tanto, como desarrollador, considero que una base de datos sólida es esencial para cualquier empresa que aspire a destacarse en su sector. Una infraestructura de bases de datos bien establecida no solo elimina los riesgos mencionados anteriormente, sino que también coloca a la empresa en una posición de liderazgo en comparación con aquellas que no han adoptado esta tecnología de manera efectiva.
 
-TABLA COMPARATIVA DE BASE DE DATOS
+## TABLA COMPARATIVA DE BASE DE DATOS
 
 ![Screenshot 2024-06-11 001900](https://github.com/Diegolew/Test_Final/assets/159177910/8f38db60-3387-45de-8a1b-3b1c16cc0621)
 
-JUSTIFICACION DEL PROYECTO
+## JUSTIFICACION DEL PROYECTO
 
-Interfaz Intuitiva: A diferencia de las opciones existentes como MySQL y PostgreSQL, que pueden resultar complicadas para usuarios no técnicos, nuestro nuevo sistema ofrece una interfaz amigable que simplifica la administración y consulta de eventos. Esto reduce la curva de aprendizaje y aumenta la productividad de los usuarios.
+### Interfaz Amigable: 
 
-Implementación Ágil: Mientras que configurar MySQL y PostgreSQL puede ser un proceso complejo y MongoDB requiere cierto nivel de habilidad, nuestro sistema se destaca por su configuración sencilla y rápida. Esto agiliza la implementación y reduce los tiempos de espera para empezar a utilizar la base de datos.
+Nuestro sistema ofrece una interfaz intuitiva que simplifica la gestión y consulta de eventos, reduciendo la curva de aprendizaje y mejorando la productividad.
 
-Eficiencia en Consultas: Nuestro sistema ha sido optimizado específicamente para ofrecer consultas rápidas y eficientes, comparable a la eficiencia de PostgreSQL. Esto garantiza tiempos de respuesta rápidos y mejora la eficacia operativa, especialmente en casos de consultas frecuentes de eventos.
+### Implementación Ágil: 
 
-Integración Versátil: Diseñado para integrarse sin complicaciones con otros sistemas empresariales, nuestro sistema facilita la interoperabilidad y la armonización del entorno tecnológico. Esto simplifica la sincronización de datos y reduce la complejidad de la gestión de sistemas.
+Con una configuración sencilla y rápida, nuestro sistema agiliza la implementación y reduce los tiempos de espera para comenzar a utilizar la base de datos.
 
-Ahorro de Costos: Nuestra solución ofrece una alternativa económicamente viable en comparación con otras bases de datos disponibles en el mercado, como MongoDB, que puede generar costos variables según el uso. Esto ayuda a reducir los gastos operativos y de mantenimiento para las empresas.
+### Consultas Eficientes: 
 
-Escalabilidad Robusta: Al utilizar una base de datos clave-valor altamente escalable, nuestro sistema puede manejar grandes volúmenes de tráfico de manera eficiente. Esto lo convierte en la opción ideal para procesos como la gestión de sesiones en aplicaciones web, usuarios en juegos en línea y carritos de compra electrónica.
+Optimizado para ofrecer consultas rápidas y eficientes, garantizando tiempos de respuesta ágiles y mejorando la eficacia operativa.
 
-AUTOR DEL PROYECTO
+### Integración Sencilla: 
 
-Diego Lewensztain Zelaya
+Diseñado para integrarse fácilmente con otros sistemas empresariales, simplifica la interoperabilidad y la gestión de sistemas, facilitando la sincronización de datos.
+
+### Ahorro de Costos: 
+
+Ofrecemos una alternativa económica en comparación con otras bases de datos, lo que ayuda a reducir los gastos operativos y de mantenimiento para las empresas.
+
+### Escalabilidad Eficiente: 
+
+Utilizando una base de datos clave-valor altamente escalable, nuestro sistema maneja grandes volúmenes de tráfico de manera eficiente, siendo ideal para diversos procesos empresariales.
 
 
+## FUNCIONES
 
 
-PSEUDOCODIGO
+### Función Add:
+
+Lo que hace: Agrega un nuevo evento a la base de datos asociado a una fecha específica. Recibe como parámetros la fecha (dato) y el evento a agregar (evento), y lo inserta en la estructura de datos de la base de datos.
+
+### Función DeleteEvent:
+
+Lo que hace: Elimina un evento específico de la base de datos que está asociado a una fecha dada. Recibe como parámetros la fecha (dato) y el evento a eliminar (evento). Busca el evento dentro de la lista de eventos asociados a esa fecha y lo elimina.
+
+### Función DeleteDate:
+
+Lo que hace: Borra todos los eventos asociados a una fecha específica de la base de datos. Recibe como parámetro la fecha (dato) que se desea eliminar. Simplemente elimina la entrada correspondiente a esa fecha en la estructura de datos de la base de datos.
+
+### Función Find:
+
+Lo que hace: Busca y muestra todos los eventos asociados a una fecha dada en la base de datos. Recibe como parámetro la fecha (dato) que se desea buscar. Verifica si la fecha existe en la base de datos y, si es así, imprime todos los eventos asociados a esa fecha.
+
+### Función Print:
+
+Lo que hace: Imprime todos los eventos almacenados en la base de datos en orden cronológico, es decir, ordenados primero por fecha y luego por evento. Itera sobre todas las fechas en la base de datos, ordena los eventos asociados a cada fecha y los imprime en orden.
+
+
+## PSEUDOCODIGO
 
     Crear una base de datos llamada database
     Imprimir "Bienvenido"
