@@ -68,37 +68,28 @@ void DelEvent(string date, string event) {
     events.erase(remove(events.begin(), events.end(), event), events.end());
 }
 
-
 void DelDate(string date) {
     database.erase(date);
 }
 
-void Find(string date){
-    if(database.count(date) == 0){
+void Find(string date) {
+    if (database.count(date) == 0) {
         cout << "Not found" << endl;
-    }
-    else{
-        for(int i = 0; i < database[date].size(); i++){
-            cout << database[date][i] << endl;
+    } else {
+        for (const auto& event : database[date]) {
+            cout << event << endl;
         }
     }
 }
 
-void Print(){
-    for(auto& date_events : database){
+void Print() {
+    for (auto& date_events : database) {
         string date = date_events.first;
         vector<string>& events = date_events.second;
-        
-        int n = events.size();
-        for (int i = 0; i < n - 1; ++i) {
-            for (int j = i + 1; j < n; ++j) {
-                if (events[i] > events[j]) {
-                    swap(events[i], events[j]);
-                }
-            }
-        }
-        
-        for(const auto& event : events){
+
+        sort(events.begin(), events.end());
+
+        for (const auto& event : events) {
             cout << date << " " << event << endl;
         }
     }
